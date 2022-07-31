@@ -3,15 +3,20 @@ import { PerfilCard } from "../Components/Cards/PerfilCard";
 import { SectionCard } from "../Components/Cards/SectionCard";
 import { SquareLinkCard } from "../Components/Cards/SquareLinkCard";
 import { IElement } from "../store/Reducers/ElementsReducer";
-import { XCircleIcon } from '@heroicons/react/solid'
+import { XCircleIcon, XIcon } from '@heroicons/react/solid'
 
 export function renderElement(element: IElement) {
     if (element.type === 'link') {
         if (element.size === 'square' || element.size === 'smallSquare') {
             return (
-                <div key={element.id}>
+                <div key={element.id} >
                     <div className="flex h-[100%] w-[100%] relative">
-                        <button className="flex w-8 h-8 absolute top-0 right-2 p-1"><XCircleIcon color="white" className="rounded-full border-1 border-gray-300 bg-black" /></button>
+                        <button 
+                            className="flex w-6 h-6 absolute top-[10%] right-[10%]"
+                            onClick={() => {handleExcludeClick(element.id)}}
+                        >
+                            <XIcon color={element.textColor} className="rounded-full border-1 border-white" />
+                        </button>
                         <SquareLinkCard title={element.title!} url={element.url!} id={element.id} bgColor={element.bgColor} textColor={element.textColor}/>
                     </div>
                 </div>
@@ -20,7 +25,12 @@ export function renderElement(element: IElement) {
             return (
                 <div key={element.id}>
                     <div className="flex h-[100%] w-[100%] relative">
-                        <button className="flex w-8 h-8 absolute top-0 right-2 p-1"><XCircleIcon color="white" className="rounded-full border-1 border-gray-300 bg-black" /></button>
+                        <button 
+                            className="flex w-6 h-6 absolute top-[36%] right-[2%] z-50"
+                            onClick={() => {handleExcludeClick(element.id)}}
+                        >
+                            <XIcon color={element.textColor} className="rounded-full border-1 border-white" />
+                        </button>
                         <LinkCard title={element.title!} url={element.url!} id={element.id} bgColor={element.bgColor} textColor={element.textColor}/>
                     </div>
                 </div>
@@ -31,7 +41,12 @@ export function renderElement(element: IElement) {
         return (
             <div key={element.id} className="w-[100%]">
                 <div className="flex h-[100%] w-[100%] relative">
-                        <button className="flex w-8 h-8 absolute top-0 right-2 p-1"><XCircleIcon color="white" className="rounded-full border-1 border-gray-300 bg-black" /></button>
+                        <button 
+                            className="flex w-6 h-6 absolute top-[10%] right-[10%]"
+                            onClick={() => {handleExcludeClick(element.id)}}
+                        >
+                            <XIcon color={element.textColor} className="rounded-full border-1 border-white" />
+                        </button>
                         <SectionCard title={element.title || ""} id={element.id} bgColor={element.bgColor} textColor={element.textColor} subTitle={element.subTitle || ""} subTextColor={element.subTextColor || "#000000"}/>
                     </div>
             </div>
@@ -41,7 +56,12 @@ export function renderElement(element: IElement) {
         return (
             <div key={element.id}>
                 <div className="flex h-[100%] w-[100%] relative">
-                        <button className="flex w-8 h-8 absolute top-0 right-2 p-1"><XCircleIcon color="white" className="rounded-full border-1 border-gray-300 bg-black" /></button>
+                        <button
+                            className="flex w-6 h-6 absolute top-[10%] right-[10%]"
+                            onClick={() => {handleExcludeClick(element.id)}}
+                        >
+                            <XIcon color={element.textColor} className="rounded-full border-1 border-white" />
+                        </button>
                         <PerfilCard title={element.title || ""} id={element.id} bgColor={element.bgColor} textColor={element.textColor} imgUri={element.imgUri || null}/>
                     </div>
             </div>
@@ -49,34 +69,6 @@ export function renderElement(element: IElement) {
     }
 }
 
-export function renderElementView(element: IElement) {
-    if (element.type === 'link') {
-        if (element.size === 'square' || element.size === 'smallSquare') {
-            return (
-                <div key={element.id}>
-                    <SquareLinkCard title={element.title!} url={element.url!} id={element.id} bgColor={element.bgColor} textColor={element.textColor}/>
-                </div>
-            )
-        } else if (element.size === 'row' || element.size === 'bigRow') {
-            return (
-                <div key={element.id}>
-                    <LinkCard title={element.title!} url={element.url!} id={element.id} bgColor={element.bgColor} textColor={element.textColor}/>
-                </div>
-            )
-        }
-
-    }else if (element.type === 'section') {
-        return (
-            <div key={element.id} className="w-[100%]">
-                <SectionCard title={element.title || ""} id={element.id} bgColor={element.bgColor} textColor={element.textColor} subTitle={element.subTitle || ""} subTextColor={element.subTextColor || "#000000"}/>
-            </div>
-        )
-    } else if (element.type === 'perfil') {
-        console.log(element.title)
-        return (
-            <div key={element.id}>
-                <PerfilCard title={element.title || ""} id={element.id} bgColor={element.bgColor} textColor={element.textColor} imgUri={element.imgUri || null}/>
-            </div>
-        )
-    }
+function handleExcludeClick(elementId: string){
+    console.log(elementId)
 }

@@ -61,6 +61,7 @@ export const Editor: React.FC = () => {
                 border-separate border-spacing-11
             ">
                 <div className="flex h-12 bg-white sticky top-2"></div>
+                <div className="relative">
                 <ResponsiveGridLayout
                     className="layout"
                     layouts={layout}
@@ -75,6 +76,7 @@ export const Editor: React.FC = () => {
                     {elementsState.map((el: IElement) => renderElement(el))}
                     
                 </ResponsiveGridLayout>
+                </div>
             </div>
             <LayoutEditBar/>
         </div>
