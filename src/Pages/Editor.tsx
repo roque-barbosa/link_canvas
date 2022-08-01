@@ -9,6 +9,8 @@ import { LayoutEditBar } from "../Components/Editor/LayoutEditBar";
 import { IElement } from "../store/Reducers/ElementsReducer";
 import { renderElement } from "../utils/EditorUtils";
 import { useSelector } from 'react-redux'
+import {ArrowNarrowRightIcon} from '@heroicons/react/solid'
+import { ListLayouts } from "../Components/Editor/LsitLayouts";
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 export const Editor: React.FC = () => {
@@ -43,6 +45,7 @@ export const Editor: React.FC = () => {
             pl-2
             pr-2
             mt-1
+            lg:p-10
         ">
             <div className="
                 h-[90%] sm:h-[100%]
@@ -79,6 +82,7 @@ export const Editor: React.FC = () => {
                 </div>
             </div>
             <LayoutEditBar/>
+            <ListLayouts/>
         </div>
     )
 }
