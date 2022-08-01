@@ -83,6 +83,12 @@ export default function layoutReducer(state = initialState, action:IAction) {
             layout: [...action.payload]  
         }
       }
+      case 'layout/removeElement': {
+        return {
+            ...state,
+            layout: [...state.layout.filter((el:any) => {if (el.i != action.payload) return el})]  
+        }
+      }
       default:
         return state
     }

@@ -48,6 +48,14 @@ export default function elementsReducer(state = initialState, action:IAction) {
           ]
         }
       }
+      case 'elements/removeElement': {
+        const newElements = state.elements.filter((el:any) => {if (el.id != action.payload) return el})
+        console.log(newElements)
+        return {
+            ...state,
+            elements: [...newElements]  
+        }
+      }
       default:
         // If this reducer doesn't recognize the action type, or doesn't
         // care about this specific action, return the existing state unchanged

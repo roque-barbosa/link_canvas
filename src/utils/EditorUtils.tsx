@@ -3,7 +3,8 @@ import { PerfilCard } from "../Components/Cards/PerfilCard";
 import { SectionCard } from "../Components/Cards/SectionCard";
 import { SquareLinkCard } from "../Components/Cards/SquareLinkCard";
 import { IElement } from "../store/Reducers/ElementsReducer";
-import { XCircleIcon, XIcon } from '@heroicons/react/solid'
+import { XIcon } from '@heroicons/react/solid'
+import { store } from '../store/Store';
 
 export function renderElement(element: IElement) {
     if (element.type === 'link') {
@@ -70,5 +71,14 @@ export function renderElement(element: IElement) {
 }
 
 function handleExcludeClick(elementId: string){
-    console.log(elementId)
+    console.log("handleClick: ", elementId)
+    store.dispatch({
+        type: 'elements/removeElement',
+        payload: elementId
+    })
+    // store.dispatch({
+    //     type: 'layout/removeElement',
+    //     payload: elementId
+    // })
+    
 }
