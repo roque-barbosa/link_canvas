@@ -9,7 +9,6 @@ export const ListLayouts: React.FC = () => {
                 flex-col
                 bg-white
                 w-full
-                relative
                 overflow-y-auto
                 scrollbar-hide
                 sm:rounded-lg

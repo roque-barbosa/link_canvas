@@ -22,13 +22,7 @@ export const LayoutPreviewCard: React.FC<ILayoutPreviewCard> = ({title, id}) => 
                 flex
                 flex-[5]
             ">{title}</h1>
-                <div className='h-full flex-1 cursor-pointer dropdown dropdown-right'>
-                <label tabIndex={0} className="cursor-pointer"> <DotsVerticalIcon/></label>
-                    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 -ml-2.5 sm:-inset-x-3.5">
-                        <li><span className="flex h-5 justify-between">Apagar <XIcon className='h-4'/></span></li>
-                    </ul>
-                   
-                </div>
+             <XIcon className='h-4'/>
            </div>
         </div>
     )
