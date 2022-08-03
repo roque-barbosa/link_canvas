@@ -22,12 +22,14 @@ export const SquareLinkCard: React.FC<ISquareLinkCard> = ({id, title, url, bgCol
         >
             <button style={{backgroundColor: bgColor}} className="
                 w-full
-                mx-5
-                h-[55%] sm:h-[95%]
-                rounded-2xl
+                h-full
                 justify-end
                 items-end
                 flex
+                rounded-2xl
+                px-2
+                my-2
+                mx-1
             ">
                 <a href={`https://${url}`} target="_blank" style={{color: textColor}} className="
                     flex

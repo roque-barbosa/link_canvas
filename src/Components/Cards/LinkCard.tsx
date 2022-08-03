@@ -24,10 +24,12 @@ export const LinkCard: React.FC<ILinkCard> = ({id, title, url, bgColor, textColo
                     flex
                     w-full
                     m-4
-                    h-3/5 sm:h-3/5
+                    h-full
                     items-center
-                    rounded-3xl sm:rounded-full
+                    rounded-2xl
                     px-2
+                    my-2
+                    mx-1
                 ">
                     <a href={`https://${url}`} target="_blank" 
                         style={{color: textColor}}
