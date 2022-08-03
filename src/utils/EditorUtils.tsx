@@ -25,7 +25,7 @@ export function renderElement(element: IElement) {
         } else if (element.size === 'row' || element.size === 'bigRow') {
             return (
                 <div key={element.id}>
-                    <div className="flex h-[100%] w-[100%] relative bg-green-200">
+                    <div className="flex h-[100%] w-[100%] relative">
                         <button 
                             className="flex w-6 h-6 absolute top-[36%] right-[2%] z-50"
                             onClick={() => {handleExcludeClick(element.id)}}
