@@ -27,7 +27,7 @@ export function renderElement(element: IElement) {
                 <div key={element.id}>
                     <div className="flex h-[100%] w-[100%] relative">
                         <button 
-                            className="flex w-6 h-6 absolute top-[36%] right-[2%] z-50"
+                            className="flex w-6 h-6 absolute top-1 left-2"
                             onClick={() => {handleExcludeClick(element.id)}}
                         >
                             <XIcon color={element.textColor} className="rounded-full border-1 border-white" />

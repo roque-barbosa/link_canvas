@@ -70,7 +70,7 @@ export const Editor: React.FC = () => {
                     layouts={layout}
                     breakpoints={{lg: 800, sm: 500}}
                     cols={{lg: 4, sm: 4}}
-                    rowHeight={100}
+                    rowHeight={70}
                     width={1200}
                     onLayoutChange={(e) => {
                         handleLayoutChange(e)
