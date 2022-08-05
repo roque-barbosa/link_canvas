@@ -62,8 +62,9 @@ export const Editor: React.FC = () => {
                 border-2 sm:border-4
                 border-black
                 border-separate border-spacing-11
+                px-2
             ">
-                <div className="flex h-12 bg-white sticky top-2"></div>
+                <div className="flex h-16 bg-white sticky top-2"></div>
                 <div className="relative">
                 <ResponsiveGridLayout
                     className="layout"

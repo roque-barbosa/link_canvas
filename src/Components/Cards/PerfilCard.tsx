@@ -27,7 +27,7 @@ export const PerfilCard: React.FC<IPerfilCard> = ({id, title, bgColor, textColor
                 flex-col
                 h-full
                 w-full
-                rounded-t-3xl
+                rounded-t-lg
                 justify-center
                 items-center
             ">

@@ -26,7 +26,7 @@ export const LinkCard: React.FC<ILinkCard> = ({id, title, url, bgColor, textColo
                     m-4
                     h-full
                     items-center
-                    rounded-2xl
+                    rounded-lg
                     px-2
                     my-2
                     mx-1
